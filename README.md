@@ -1,124 +1,53 @@
-# 🧩 RiddleCam
+# 📸 RiddleCam: The Interactive Object-Guessing Game
 
-**RiddleCam** is an interactive computer vision game built with **Python** and **YOLOv8** that challenges you with riddles — and asks you to prove your answer using your webcam!
-It combines fun logic puzzles with real-time object detection using **OpenCV** and **Ultralytics YOLO**.
+Welcome to RiddleCam! This fun and interactive game challenges you to solve riddles and then prove your answer by showing the object to your webcam. Using the power of real-time object detection with YOLOv8, RiddleCam brings a classic guessing game into the modern world.
 
 ---
 
 ## 🎮 How It Works
 
-1. The program asks you a random riddle (e.g. *“I have keys but open no doors. What am I?”*).
-2. You type your guess in the terminal.
-3. If your guess is correct, the camera opens — now you must **show the object** in front of your webcam.
-4. The YOLOv8 model detects if the correct object appears in the frame.
-5. If found, you win that round! If not, try another riddle.
+The game flow is simple but engaging:
+
+1.  **Get a Riddle**: The game presents you with a random riddle from its collection.
+2.  **Make a Guess**: You type your answer into the terminal. If you're wrong, you can try again!
+3.  **Show the Object**: Once you guess correctly, the real challenge begins! Your webcam will activate.
+4.  **Prove It!**: You must find the physical object and show it to the camera.
+5.  **Win the Round**: The YOLOv8 model will scan the video feed. If it detects the correct object, you win the round and move on to the next riddle!
 
 ---
 
-## 🧠 Example Gameplay
+## ✨ Features
 
-```
---- Welcome to RiddleCam! ---
-I will ask you a riddle. Guess the object, then show it to the camera!
-Type 'quit' at any time to exit.
-
-==============================
-Here is your riddle:
-> I have keys but open no doors. I have space but no room. What am I?
-What is your guess? > keyboard
-
-CORRECT! The answer is 'keyboard'.
-Now, prove it! Show the object to the camera.
-```
-
-The webcam window opens, and if YOLO detects a **keyboard**, you’ll see:
-
-```
-I see a keyboard! Well done!
-```
+* **Interactive CLI**: A simple and clean command-line interface to guide you through the game.
+* **Real-Time Object Detection**: Uses your webcam and the powerful **YOLOv8** model to identify objects in real-time.
+* **Fun Riddles**: A diverse collection of riddles to keep you guessing.
+* **Engaging Gameplay**: Combines brainpower with a scavenger hunt-like experience.
 
 ---
 
-## ⚙️ Requirements
+## 🛠️ Setup & Installation
 
-Make sure you have the following installed:
+To get started, you'll need Python and a few libraries. A webcam is also required to play the game.
 
-* **Python 3.8+**
-* **pip** (Python package manager)
-* A working **webcam**
+1.  **Clone the repository** (or download the script).
 
-### 🧩 Install Dependencies
+2.  **Install the required Python libraries**:
+    Open your terminal and run the following command to install `ultralytics` (which includes PyTorch) and `OpenCV`.
 
-Run this command in your terminal:
-
-```bash
-pip install ultralytics opencv-python
-```
-
-> 💡 *If `ultralytics` doesn’t install YOLOv8 properly, try updating pip first:*
-
-```bash
-pip install --upgrade pip
-```
+    ```bash
+    pip install ultralytics opencv-python
+    ```
 
 ---
 
 ## 🚀 How to Run
 
-1. Clone or download this repository.
-2. Open your terminal in the project folder.
-3. Run the script:
+1.  Navigate to the project directory in your terminal.
+2.  Run the script with Python:
 
-   ```bash
-   python riddlecam.py
-   ```
-4. Follow the on-screen instructions and enjoy the game!
+    ```bash
+    python riddlecam.py 
+    ```
+    *(Assuming you name the file `riddlecam.py`)*
 
----
-
-## 🧰 How It Works (Under the Hood)
-
-* The **YOLOv8n** model (`yolov8n.pt`) is loaded using the Ultralytics library.
-* Each round has three states:
-
-  1. **ASK_RIDDLE** – A random riddle is chosen.
-  2. **WAITING_FOR_GUESS** – The player types an answer.
-  3. **DETECTING_OBJECT** – The camera opens, and YOLO searches for the correct object.
-* If the YOLO model detects the correct object class (like “keyboard”, “tv”, or “bottle”), it displays a success message.
-
----
-
-## 🧩 Supported Riddles
-
-| Riddle                                                               | Answer   |
-| -------------------------------------------------------------------- | -------- |
-| I have a screen but no face. I bring the world to your living space. | tv       |
-| I have keys but open no doors. I have space but no room.             | keyboard |
-| I have a neck but no head, and I wear a cap.                         | bottle   |
-| I have ribs but no spine. I’m your best friend when it rains.        | umbrella |
-| I’m a fruit that’s long and yellow. Monkeys think I’m a fine fellow. | banana   |
-
----
-
-## 🪄 Tips
-
-* Make sure your webcam has a clear view of the object.
-* Good lighting helps YOLO detect objects more accurately.
-* You can add more riddles and answers by updating the `riddles` dictionary in the code.
-
----
-
-## 🧑‍💻 Author
-
-**Mohammed Nouman**
-Made with ❤️ using Python, OpenCV, and YOLOv8.
-
----
-
-## 🐍 License
-
-This project is open-source and free to use for educational or personal projects.
-
----
-
-
+3.  Follow the on-screen instructions, solve the riddles, and have fun!
